@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable;
-// use Tymon\JWTAuth\Contracts\JWTSubject;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Model implements Authenticatable
+class User extends Model implements JWTSubject
 {
     protected $fillable = [
-        'email', 'password',
+        'name', 'email', 'password',
     ];
 
     protected $guarded = [
@@ -40,12 +39,14 @@ class User extends Model implements Authenticatable
         return 'remember_token';
     }
 
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
 
-    // public function getJWTIdentifier() {
-    //     return $this->getKey();
-    // }
-
-    // public function getJWTCustomClaims() {
-    //     return [];
-    // }
+    public function getJWTCustomClaims() {
+        return [
+            'email'=>$this->email,
+            'name'=>$this->name
+        ];
+    }
 }
