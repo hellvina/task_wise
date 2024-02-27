@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
-    public function singup(Request $request) {
+    public function signup(Request $request) {
 
         try {
             $request->validate([
