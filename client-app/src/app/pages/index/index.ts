@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ButtonComponent } from '../../components/button/button';
 
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
