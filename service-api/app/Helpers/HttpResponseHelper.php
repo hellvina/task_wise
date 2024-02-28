@@ -8,13 +8,13 @@ class HttpResponseHelper
 {
     public function __construct($error_class, $message, $code)
     {
-        $this->errorClass = $errorClass;
+        $this->error_class = $error_class;
         $this->message = $message;
         $this->code = $code;
     }
 
     private function toResponseLog() {
-        Log::error($this->errorClass . ' :' . $this->message);
+        Log::error($this->error_class . ' :' . $this->message);
         return response()->json(['message' => $this->message], $this->code);
     }
 
