@@ -12,7 +12,7 @@ input{
 
 label{
     position: relative;
-    font-family: 'Roboto', serif;
+    font-family: 'Source Sans 3', serif;
     color: white;
     font-size: 16px;
     font-weight: 200;
@@ -24,7 +24,7 @@ label{
 @media (min-width: 540px) {
     input{
        width: 100%;
-       max-width: 25rem;
+       max-width: 35rem;
        margin: auto;
     }
     label{
@@ -45,4 +45,10 @@ label{
         margin-left: 11rem;
     }
 
+}
+
+@media (min-width: 1400px) {
+    label{
+        margin-left: 6rem;
+    }
 }
