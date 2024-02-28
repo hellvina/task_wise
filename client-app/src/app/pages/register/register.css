@@ -1,0 +1,65 @@
+.input-group {
+    margin-bottom: 2rem;
+}
+
+app-title{
+    animation: taskwise-move 1s;
+    position: relative;
+    top: 0;
+}
+
+app-input{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+app-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-group{
+    animation: input-appear 2s;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.login{
+    animation: input-appear 2s;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 540px){
+    app-input{
+        width: 100%;
+    }
+    app-button{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@keyframes input-appear {
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+}
+
+@keyframes taskwise-move {
+    0%{
+        top: 7rem
+    }
+    100%{
+        top: 0
+    }
+}
