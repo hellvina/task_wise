@@ -1,10 +1,16 @@
 <main> 
     <app-title></app-title>
-    <form class="input-group">
-        <app-input [label]="'Email'"></app-input>
-        <app-input [label]="'Senha'"></app-input>
-    </form>
-    <section class="login">
-        <app-button [action]="'link'" [page]="'login'" [label]="'ENTRAR'"></app-button>
-    </section>
+    <div class="container">
+        <form (ngSubmit)="onSubmit()">
+            <section class="form-container">
+                <label for="email"> Email </label>
+                <input id="email" type="text" class="input" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                <label for="password"> Senha </label>
+                <input id="password" type="text" class="input" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+            </section>
+            <section class="login">
+                <button type="submit"> ENTRAR </button>
+            </section>
+        </form>
+    </div>
 </main>
