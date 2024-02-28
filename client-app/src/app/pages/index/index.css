@@ -1,0 +1,63 @@
+app-title {
+    animation: taskwise-appear 1s ease-out;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+app-slogan {
+    animation: slogan-appear 2s;
+}
+
+app-button {
+    animation: button-appear 4s;
+    width: 55%;
+    margin-bottom: 2rem;
+}
+
+app-title, app-slogan, app-button {
+    position: relative;
+    top: 7rem;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@keyframes taskwise-appear {
+    0% {
+        opacity: 0%;
+        top: 50rem;
+    }
+    100% {
+        opacity: 100%;
+        top: 7rem;
+    }
+}
+
+@keyframes slogan-appear {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+    
+}
+
+@keyframes button-appear {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
