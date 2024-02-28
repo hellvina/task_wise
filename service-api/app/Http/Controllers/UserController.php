@@ -14,7 +14,8 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class UserController extends Controller
 {
 
-    public function signup(Request $request) {
+    public function signup(Request $request) 
+    {
 
         try {
             $request->validate([
@@ -42,7 +43,8 @@ class UserController extends Controller
         }
     }
 
-    public function signin(Request $request) {
+    public function signin(Request $request) 
+    {
         try {
             $request->validate([
                 'email' => 'required|string|email',
