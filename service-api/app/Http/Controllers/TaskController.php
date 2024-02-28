@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use App\Helper\HttpResponseHelper;
 
 class TaskController extends Controller
 {
@@ -31,14 +31,17 @@ class TaskController extends Controller
                 'user_id' => $user_id,
                 'status' => $request->status,
             ]);
+
             return response()->json(['message' => 'task created successfully'], 201);
 
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationException', $error->getMessage(), 422
+            ))->toResponseLog();
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'Failed to create task'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
     }
 
@@ -49,11 +52,13 @@ class TaskController extends Controller
             return response()->json($tasks, 200);
 
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationException', $error->getMessage(), 422
+            ))->toResponseLog();
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'Failed to list tasks'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
 
     }
@@ -64,11 +69,14 @@ class TaskController extends Controller
             $task = Task::find($id);
             return response()->json($task, 200);
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationException', $error->getMessage(), 422
+            ))->toResponseLog();
+            
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'Failed to update task'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
 
     }
@@ -81,11 +89,14 @@ class TaskController extends Controller
             return response()->json(['message' => 'task updated successfully'], 200);
 
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationErrorClass', $error->getMessage(), 422
+            ))->toResponseLog();
+
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'Failed to update task'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
     }
 
@@ -100,11 +111,14 @@ class TaskController extends Controller
             return response()->json(['message' => 'task deleted successfully'], 204);
 
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationErrorClass', $error->getMessage(), 422
+            ))->toResponseLog();
+
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'Failed to update task'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
     }
 }

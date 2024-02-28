@@ -35,11 +35,13 @@ class UserController extends Controller
             return response()->json(['message' => 'user created successfully', 'token' => $token], 201);
 
         } catch (ValidationException $error) {
-            Log::error(['error' => $error]);
-            return response()->json(['message' => $error->getMessage()], 422);
+            return (new HttpResponseHelper(
+                'ValidationException', $error->getMessage(), 422
+            ))->toResponseLog();
         } catch (\Exception $error) {
-            Log::error(['error' => $error]);
-            return response()->json(['message' => 'Failed to create user'], 500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
     }
 
@@ -61,11 +63,13 @@ class UserController extends Controller
             return response()->json(['message' => 'user logged successfully', 'token' => $token], 200);
 
         } catch (ValidationException $error) {
-            Log::error('ValidationException: ' . $error->getMessage());
-            return response()->json(['message' => $error->getMessage()]);
+            return (new HttpResponseHelper(
+                'ValidationException', $error->getMessage(), 422
+            ))->toResponseLog();
         } catch (\Exception $error) {
-            Log::error('Exception: ' . $error->getMessage());
-            return response()->json(['message' => 'failed to signin'],500);
+            return (new HttpResponseHelper(
+                'Exception', $error->getMessage(), 500
+            ))->toResponseLog();
         }
     }
 }
