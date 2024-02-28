@@ -58,4 +58,9 @@ class User extends Model implements Authenticatable, JWTSubject
             'name'=>$this->name
         ];
     }
+
+    public function tasks() 
+    {
+        return $this->hasMany(Task::class);
+    }
 }
