@@ -30,7 +30,7 @@ export class Register {
             response => {
                 localStorage.setItem('token', response.token)
                 console.log('Response:', response);
-                this.router.navigate([''])
+                this.router.navigate(['login'])
             },
             error => {
                 console.error('Error:', error)

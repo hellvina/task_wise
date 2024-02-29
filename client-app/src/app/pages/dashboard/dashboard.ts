@@ -6,6 +6,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { HttpHeaders, HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoadingComponent } from "../../components/loading/loading";
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
     selector: 'app-dashboard',
@@ -62,11 +63,12 @@ export class Dashboard {
 
   fetchTasks(): void {
     const token = localStorage.getItem('token');
-    
+    const helper = new JwtHelperService().decodeToken(token as string);
     const headers = new HttpHeaders({
         'Authorization': `Bearer ${token}`
     });
-    const url = 'http://localhost:8000/api/tasks'
+
+    const url = `http://localhost:8000/api/tasks?user_id=${helper.sub}`
 
     this.http.get<any>(url, { headers }).subscribe(
         response => {
@@ -79,6 +81,9 @@ export class Dashboard {
           this.isLoading = false
         },
         error => {
+          if (error.status === 401) {
+            this.router.navigate(['login'])
+          }
           console.error('Error fetching tasks:', error);
         }
     )

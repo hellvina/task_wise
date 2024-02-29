@@ -34,7 +34,7 @@ export class Login {
             response => {
                 localStorage.setItem('token', response.token)
                 console.log('Response:', response);
-                this.router.navigate([''])
+                this.router.navigate(['dashboard'])
             },
             error => {
                 console.error('Error:', error)
