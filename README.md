@@ -81,7 +81,9 @@ sudo apt install php-mbstring php-xml php-bcmath php-curl
 > |--------|------------|----------------|
 > | `name` |  required  | string         | 
 > | `email` |  required  | string        | 
-> | `password` |  required  | string     | 
+> | `password` |  required  | string     |
+
+<img src="https://i.imgur.com/P2CbdwJ.gif" width="400">
 
 ### POST: /signin
 
@@ -102,6 +104,7 @@ Use o token gerado no retorno do singup:
 > | `email` |  required  | string        | 
 > | `password` |  required  | string     | 
 
+<img src="https://i.imgur.com/NdibKB2.gif" width="400">
 
 ### POST: /tasks
 
@@ -123,7 +126,8 @@ Use o token gerado no retorno do singup:
 > | `status` |  required  | string       |
 > | `user_id` |  required  | number      |
 
- 
+ <img src="https://i.imgur.com/hEgqwml.gif" width="400">
+
  ### GET: /tasks
 
 #### Indexar tarefas por usuário
@@ -141,6 +145,8 @@ Use o token gerado no retorno do singup:
 > | name   |  type      | data type      | 
 > |--------|------------|----------------|
 > | `user_id` |  required  | string  |
+
+ <img src="https://i.imgur.com/t7v4Gxt.gif" width="400">
 
  ### GET: /tasks/:id
 
@@ -172,6 +178,8 @@ Use o token gerado no retorno do singup:
 > | `description` |  required  | string  |
 > | `title` |  required  | string  |
 > | `status` |  required  | string  |
+
+ <img src="https://i.imgur.com/d3zpdTi.gif" width="400">
 
  ### DELETE: /tasks/:id
 
