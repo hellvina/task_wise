@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use Illuminate\Validation\ValidationException;
 use App\Helper\HttpResponseHelper;
+use Illuminate\Support\Facades\Log;
 
 class TaskController extends Controller
 {
@@ -45,10 +46,10 @@ class TaskController extends Controller
         }
     }
 
-    public function index() 
+    public function index(Request $request) 
     {
-        try {
-            $tasks = Task::all();
+        try { 
+            $tasks = Task::where('user_id', $request->user_id)->get();
             return response()->json($tasks, 200);
 
         } catch (ValidationException $error) {
