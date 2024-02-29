@@ -1,0 +1,22 @@
+<main>
+    <app-header></app-header>
+    <ng-template [ngIf]="hasTasks" [ngIfElse]="noTask">
+        <section id="card-container">
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+            <app-task-card></app-task-card>
+        </section>
+    </ng-template>
+    <ng-template #noTask>
+        <app-no-task></app-no-task>
+    </ng-template>
+</main>
