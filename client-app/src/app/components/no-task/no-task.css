@@ -1,0 +1,18 @@
+.no-task{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg{
+    box-sizing: content-box;
+    width: 10rem;
+    margin-top: 8rem;
+}
+
+p{
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    width: fit-content;
+    font-weight: 200;
+}
