@@ -19,6 +19,10 @@ export class Login {
 
     constructor(private http: HttpClient, private router: Router) {}
 
+    return() {
+        this.router.navigate([''])
+    }
+
     onSubmit() {
         const formData = {
             email: this.email,

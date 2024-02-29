@@ -9,7 +9,8 @@
                 <input id="description" type="text" class="input" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
             </section>
             <section class="create">
-                <button type="submit"> CRIAR </button>
+                <button type="button" class="return" (click)="return()"><i class="fa-regular fa-circle-left"></i></button>
+                <button type="submit"> ADICIONAR </button>
             </section>
         </form>
     </div>

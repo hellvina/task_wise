@@ -20,8 +20,11 @@ export class Create {
     constructor(private http: HttpClient, private router: Router) {}
 
     token = localStorage.getItem('token');
-
     helper = new JwtHelperService().decodeToken(this.token as string);
+
+    return() {
+        this.router.navigate(['dashboard'])
+    }
 
     onSubmit(): void {
         this.user_id = this.helper.sub

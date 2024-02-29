@@ -9,6 +9,7 @@
                 <input id="description" type="text" class="input" [(ngModel)]="task.description" [ngModelOptions]="{standalone: true}">
             </section>
             <section class="edit">
+                <button type="button" class="return" (click)="return()"><i class="fa-regular fa-circle-left"></i></button>
                 <button type="submit"> EDITAR </button>
             </section>
         </form>

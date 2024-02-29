@@ -17,6 +17,10 @@ export class Edit implements OnInit {
     
     constructor(private http: HttpClient, private router: Router,private route: ActivatedRoute) {}
 
+    return() {
+        this.router.navigate(['dashboard'])
+    }
+
     ngOnInit(): void {
         this.route.params.subscribe(params => {
             this.taskId = +params['id'];

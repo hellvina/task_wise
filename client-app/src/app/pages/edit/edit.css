@@ -29,33 +29,39 @@ app-title{
     margin-bottom: 0.5rem;
     color: white;
     font-family: 'Source Sans 3', sans-serif;
-    font-weight: 200;
     font-size: 14px;
 
 }
 
-.edit {
+.edit{
     display: flex;
     justify-content: center;
     animation: input-appear 2s;
+    gap: 1rem;
+    padding-right: 5rem;
 }
 
 .edit button{
     background-color: var(--highlight-color);
     border: none;
-    width: 100%;
+    width: fit-content;
     max-width: 12rem;
     height: 64px;
     border-radius: 8px;
-    margin-right: auto;
-    margin-left: auto;
     position: relative;
     margin-bottom: 1rem;
     font-family: 'Source Sans 3', serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--button-text-color);
     margin-top: 2rem;
+}
+
+.edit button.return{
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 24px;
 }
 
 .edit button:hover{
@@ -67,29 +73,41 @@ app-title{
     .form-container label{
         left: -8rem
     }
+    .edit{
+        gap: 2.5rem;
+        padding-right: 5.5rem;
+    }
 }
 
 @media (min-width: 425px) {
     .form-container label{
         left: -9rem
     }
+    .edit{
+        gap: 4rem;
+        padding-right: 7rem;
+    }
+    .edit button{
+        padding: 1rem;
+    }
 }
 
 @media (min-width: 768px) {
     .form-container label{
-        left: -13rem;
-        font-size: 16px;
+        left: -13rem
     }
     .form-container input{
         max-width: 30rem;
     }
-    .button{
-        width: 100%;
-        margin-left: 1rem;
-        max-width: 20rem;
-        margin: auto;
-        font-size: 16px;
+    .edit{
+        gap: 7.5rem;
+        padding-right: 10.5rem;
     }
+
+    .edit button {
+        font-size: 24px;
+    }
+    
 }
 
 @keyframes input-appear {
