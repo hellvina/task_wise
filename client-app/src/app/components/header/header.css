@@ -1,0 +1,47 @@
+#page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px var(--highlight-color);
+    border-radius: 10px;
+    padding-bottom: 1.5rem;
+}
+
+#page-header p{
+    font-family: 'Roboto';
+    display: none;
+    color: white;
+    font-size: 24px;
+    margin-left: 12rem;
+}
+
+#manage-account{
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0;
+}
+
+#manage-account:hover{
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+@media (min-width: 540px){
+    #manage-account{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (min-width: 768px){
+    #manage-account{
+        width: 5rem;
+        height: 5rem;
+    }
+    #page-header p{
+        display: block;
+    }
+}

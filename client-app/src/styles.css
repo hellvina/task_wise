@@ -9,13 +9,15 @@
 }
 
 :root{
-    --bg-color: #141414;
+    /* --bg-color: #353a3e; */
+    --bg-color: #23282b;
     --main-bg-color: #455564;
     --card-color: rgb(82, 103, 126);
     --highlight-color: #878f99;
     --text-color: white;
     --button-text-color: #253644;
     --input-text-color: #092b42;
+    --opened-card-color: #3c5168;
 }
 
 body{
