@@ -1,0 +1,13 @@
+.loading i{
+    animation: load 1.5s infinite ease-in-out;
+    font-size: 64px;
+    color: white;
+}
+
+@keyframes load {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}

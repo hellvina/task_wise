@@ -39,6 +39,14 @@ app-no-task{
     color: white;
 }
 
+app-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+
+}
+
 @media (min-width: 540px){
     #card-container{
         padding-right: 2.5rem;

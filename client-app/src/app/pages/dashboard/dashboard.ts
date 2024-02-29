@@ -5,16 +5,18 @@ import { HeaderComponent } from "../../components/header/header";
 import { NgFor, NgIf } from '@angular/common';
 import { HttpHeaders, HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoadingComponent } from "../../components/loading/loading";
 
 @Component({
     selector: 'app-dashboard',
     standalone: true,
     templateUrl: './dashboard.html',
     styleUrl: './dashboard.css',
-    imports: [TaskCardComponent, NoTaskComponent, HeaderComponent, NgIf, HttpClientModule, NgFor]
+    imports: [TaskCardComponent, NoTaskComponent, HeaderComponent, NgIf, HttpClientModule, NgFor, LoadingComponent]
 })
 export class Dashboard {
   hasTasks = false
+  isLoading = true
 
   tasks: any = []
 
@@ -74,6 +76,7 @@ export class Dashboard {
             if (this.tasks.length > 0) {
               this.hasTasks = true
             }
+          this.isLoading = false
         },
         error => {
           console.error('Error fetching tasks:', error);

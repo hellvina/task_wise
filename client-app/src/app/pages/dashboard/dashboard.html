@@ -1,23 +1,28 @@
 <main>
     <app-header></app-header>
-    <ng-template [ngIf]="hasTasks" [ngIfElse]="noTask">
-        <section action="'link'" class="add-task">
-            <button class="add-task button" (click)="addTaskRoute()">
-                <i class="fa-solid fa-plus"></i>
-                ADICIONAR TAREFA
-            </button>
-        </section>
-        <ng-template id="card-container" ngFor let-task [ngForOf]="tasks" let-i="index">
-            <app-task-card [name]="task.name" [content]="task.description" [taskId]="task.id" [status]="task.status" (deleteTaskClicked)="confirmDelete(task.id, i)" (editClicked)="edit(task.id)" (statusClicked)="updateStatus(task.id, i)"></app-task-card>
-        </ng-template>
+    <ng-template [ngIf]="isLoading" [ngIfElse]="loaded">
+    <app-loading></app-loading>
     </ng-template>
-    <ng-template #noTask>
-        <app-no-task></app-no-task>
-        <section class="add-task">
-            <button class="add-task button" (click)="addTaskRoute()">
-                <i class="fa-solid fa-plus"></i>
-                ADICIONAR TAREFA
-            </button>
-        </section>
+    <ng-template #loaded>
+        <ng-template [ngIf]="hasTasks" [ngIfElse]="noTask">
+            <section action="'link'" class="add-task">
+                <button class="add-task button" (click)="addTaskRoute()">
+                    <i class="fa-solid fa-plus"></i>
+                    ADICIONAR TAREFA
+                </button>
+            </section>
+            <ng-template id="card-container" ngFor let-task [ngForOf]="tasks" let-i="index">
+                <app-task-card [name]="task.name" [content]="task.description" [taskId]="task.id" [status]="task.status" (deleteTaskClicked)="confirmDelete(task.id, i)" (editClicked)="edit(task.id)" (statusClicked)="updateStatus(task.id, i)"></app-task-card>
+            </ng-template>
+        </ng-template>
+        <ng-template #noTask>
+            <app-no-task></app-no-task>
+            <section class="add-task">
+                <button class="add-task button" (click)="addTaskRoute()">
+                    <i class="fa-solid fa-plus"></i>
+                    ADICIONAR TAREFA
+                </button>
+            </section>
+        </ng-template>
     </ng-template>
 </main>
