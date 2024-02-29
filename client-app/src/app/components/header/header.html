@@ -1,5 +1,15 @@
 <section id="page-header">
     <app-title></app-title>
     <p>Olá, {{name}}</p>
-    <button id="manage-account"></button>
+    <ng-template [ngIf]="settingOpened" [ngIfElse]="closed">
+        <section class="settings">
+            <div class="menu">
+                <button (click)="close()"><i class="fa-solid fa-circle-left"></i></button>
+                <div class="item" (click)="logout()" >Logout</div>
+            </div>
+        </section>
+    </ng-template>
+    <ng-template #closed>
+        <button class="manage-account" (click)="settings()"><i class="fa-solid fa-user-large"></i></button>
+    </ng-template>
 </section>
