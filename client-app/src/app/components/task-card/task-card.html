@@ -1,28 +1,29 @@
 <ng-template [ngIf]="opened" [ngIfElse]="closed">
     <section class="card opened" [ngClass]="{'completed': completed}">
-        <p>Aberto</p>
-            <ng-template [ngIf]="completed" [ngIfElse]="incomplete">
-                <button class="completed-check" (click)="complete()">
-                    <i class="fa-solid fa-square-check"></i>
-                </button>
-            </ng-template>
-            <ng-template #incomplete>
-                <button class="completed-check" (click)="complete()">
-                    <i class="fa-regular fa-square"></i>
-                </button>
-            </ng-template>
+        <p>{{ name }}</p>
+        <ng-template [ngIf]="completed" [ngIfElse]="incomplete">
+            <button class="completed-check" (click)="complete()">
+                <i class="fa-solid fa-square-check"></i>
+            </button>
+        </ng-template>
+        <ng-template #incomplete>
+            <button class="completed-check" (click)="complete()">
+                <i class="fa-regular fa-square"></i>
+            </button>
+        </ng-template>
         <button class="collapse" (click)="open()">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
     </section>
     <section class="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro unde nam ullam laboriosam cumque, corporis quasi ducimus optio, fugiat sequi officia architecto ea maxime exercitationem iusto vero deserunt incidunt a?
+        <p>{{ content }}</p>
+        <button class="delete" (click)="confirmDelete()">EXCLUIR</button>
     </section>
 </ng-template>
 
 <ng-template #closed>
     <section class="card closed" [ngClass]="{'completed': completed}">
-        <p>Fechado</p>
+        <p>{{ name }}</p>
         <ng-template [ngIf]="completed" [ngIfElse]="incomplete">
             <button class="completed-check" (click)="complete()">
                 <i class="fa-solid fa-square-check"></i>

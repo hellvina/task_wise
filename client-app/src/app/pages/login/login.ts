@@ -32,6 +32,7 @@ export class Login {
 
         this.http.post<any>(url, formData, { headers }).subscribe(
             response => {
+                localStorage.setItem('token', response.token)
                 console.log('Response:', response);
                 this.router.navigate([''])
             },

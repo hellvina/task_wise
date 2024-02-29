@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-task-card',
@@ -9,12 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './task-card.css'
 })
 export class TaskCardComponent {
+  @Input() name: string | undefined;
+  @Input() content: string | undefined;
   completed = false
+  opened = false
 
+  confirmDelete() {
+    confirm("Deletar?")
+  }
+  
   complete() {
     this.completed = !this.completed
   }
-  opened = false
+  
   open(){
     this.opened = !this.opened
   }

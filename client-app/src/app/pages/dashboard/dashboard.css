@@ -16,6 +16,29 @@ app-no-task{
     scrollbar-width: none;
 }
 
+.add-task{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.add-task.button{
+    max-width: 12rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: rgb(85, 156, 85);
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
 @media (min-width: 540px){
     #card-container{
         padding-right: 2.5rem;

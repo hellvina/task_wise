@@ -1,0 +1,16 @@
+<main> 
+    <app-title></app-title>
+    <div class="container">
+        <form (ngSubmit)="onSubmit()">
+            <section class="form-container">
+                <label for="name"> Título </label>
+                <input id="name" type="text" class="input" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                <label for="description"> Descrição </label>
+                <input id="description" type="text" class="input" [(ngModel)]="description" [ngModelOptions]="{standalone: true}">
+            </section>
+            <section class="register">
+                <button type="submit"> CADASTRAR </button>
+            </section>
+        </form>
+    </div>
+</main>
