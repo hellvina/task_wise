@@ -34,13 +34,13 @@ app-title{
 
 }
 
-.create {
+.edit {
     display: flex;
     justify-content: center;
     animation: input-appear 2s;
 }
 
-.create button{
+.edit button{
     background-color: var(--highlight-color);
     border: none;
     width: 100%;
@@ -58,7 +58,7 @@ app-title{
     margin-top: 2rem;
 }
 
-.create button:hover{
+.edit button:hover{
     cursor: pointer;
     filter: brightness(1.1);
 }

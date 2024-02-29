@@ -2,11 +2,17 @@
     <section class="card opened" [ngClass]="{'completed': completed}">
         <p>{{ name }}</p>
         <ng-template [ngIf]="completed" [ngIfElse]="incomplete">
+            <button class="edit" (click)="edit()">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
             <button class="completed-check" (click)="complete()">
                 <i class="fa-solid fa-square-check"></i>
             </button>
         </ng-template>
         <ng-template #incomplete>
+            <button class="edit" (click)="edit()">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
             <button class="completed-check" (click)="complete()">
                 <i class="fa-regular fa-square"></i>
             </button>
@@ -25,11 +31,17 @@
     <section class="card closed" [ngClass]="{'completed': completed}">
         <p>{{ name }}</p>
         <ng-template [ngIf]="completed" [ngIfElse]="incomplete">
+            <button class="edit" (click)="edit()">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
             <button class="completed-check" (click)="complete()">
                 <i class="fa-solid fa-square-check"></i>
             </button>
         </ng-template>
         <ng-template #incomplete>
+            <button class="edit" (click)="edit()">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </button>
             <button class="completed-check" (click)="complete()">
                 <i class="fa-regular fa-square"></i>
             </button>

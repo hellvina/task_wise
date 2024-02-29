@@ -1,0 +1,19 @@
+<main> 
+    <app-title></app-title>
+    <div class="container">
+        <form (ngSubmit)="onSubmit()">
+            <section class="form-container">
+                <label for="name"> Título </label>
+                <input id="name" type="text" class="input" [(ngModel)]="task.name" [ngModelOptions]="{standalone: true}">
+                <label for="description"> Descrição </label>
+                <input id="description" type="text" class="input" [(ngModel)]="task.description" [ngModelOptions]="{standalone: true}">
+            </section>
+            <section class="edit">
+                <button type="submit"> EDITAR </button>
+            </section>
+        </form>
+    </div>
+</main>
+
+  
+  

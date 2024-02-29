@@ -68,6 +68,17 @@
     z-index: 1;
 }
 
+.delete{
+    background-color: rgb(182, 91, 91);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+}
+
 @media (min-width: 540px){
     .card p{
         width: 70%;
